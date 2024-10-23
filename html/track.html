@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tracking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" type="text/css" href="../css/dashboard.css" />
+    <style>
+        body{
+            height: 100%;
+            width: 100%;
+            padding: 0px;
+            margin:0px;
+            background: #ffeaff;
+        }
+
+        /*////////////////////////////  header section  ////////////////////////////*/
+        :root{
+            --header_height:60px;
+        }
+        header {
+            padding: 0px;
+            margin: 0px;
+            height: 75px; 
+            width: 100%;
+            display: flex;
+            flex: 1 1 100%;
+            align-items: stretch;
+            background-color: #dc9efb;
+            box-sizing: border-box;
+            position: fixed;
+            z-index: 10;
+            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+        }
+        .student_Logo{
+            margin: 7px;
+            margin-left: 15px;
+            width: var(--header_height);
+            height: var(--header_height);
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .clg_name{
+            width: 100%;
+            margin:7px;
+            height: var(--header_height);
+            font-size: 30px ;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            line-height: var(--header_height);
+            overflow: hidden;
+            text-align: center; 
+            letter-spacing: 5px;
+        }
+
+        /*////////////////////////////  main-body  ////////////////////////////*/
+        main-body{
+            position: relative;
+            top: 75px;
+            padding: 0px;
+            margin: 0px;
+            min-height: fit-content; 
+            width: 100%;
+            display: flex;
+            flex: 1 3 100%;
+            align-items: stretch;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        /*////////////////////////////  navigation  ////////////////////////////*/
+        .nav{
+            width: 40vb;
+            min-width:fit-content;
+            /* min-height: 100%; */
+            background: rgb(255, 255, 255);
+            border: 2px #F4ECFF solid;
+            z-index: 1;
+            overflow-x: hidden;
+            /* transition: 0.5s; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: stretch;
+            padding: 0px;
+            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .stu-info{
+            padding: 10px;
+            margin-bottom: 40px;
+            height: 75px;
+            width: 100%;
+            background-color: #f7dfff;
+            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+            /* border: 2px black solid; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stu-img{
+            min-width:60px;
+            height: 60px;
+            margin: 0px 0px;
+            padding: 0px;
+        }
+        .image{
+            width: 100%;;
+            height: 100%;
+            object-fit: contain;
+        }
+        .stu-name{
+            max-width: 200px;
+            margin:0px 10px;
+            height: 80px;
+            font-size: 25px ;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            line-height: 80px;
+            overflow: hidden;
+        }
+        .nav_container{
+            margin-bottom: 25px;
+            margin-inline: 40px;
+            height: 60px;
+            width: 250px;
+            border: 4px solid #f7dfff;
+            border-radius: 35px;
+            background-color: #ffffff; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav_container:hover{
+            background-color: #f7dfff; 
+        }
+        .img-container{
+            height: 35px;
+        }
+        .nav-item{
+            margin-left: 10px;
+            font-size: 20px ;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            line-height: 30px;
+            opacity: 75%;
+        }
+        .logout{
+            bottom: 35 px;
+        }
+
+        /*////////////////////////////  Main body  ////////////////////////////*/
+        .main_body {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column; 
+            min-height: calc(100vh - 70px);
+            padding: 0px; 
+            box-sizing: border-box;
+            position: relative;
+        }
+        .blur {
+            filter: blur(3px); /* Adjust blur value as needed */
+            transition: filter 0.3s ease; /* Smooth transition */
+        }
+
+        .sub_header{
+            width: 100%;
+            height: 70px;
+            background-color: #f9dcf5;
+            margin: 0;
+            padding: 20px 0px 20px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sub_header_text{
+            width: 60%;
+            margin-left: 30px;
+            height: var(--header_height);
+            font-size: 35px ;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            line-height: var(--header_height);
+            overflow: hidden;
+            
+        }
+        .filter{
+            width: 30%;
+            height: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row;
+        }
+        .status_filter{
+            width: fit-content;
+            height: 80%;
+            margin-right:5px;
+            text-align: center;
+            font-size: 25px;
+            font-family: 'Inter', sans-serif;
+        }
+        .status_filter option{
+            padding: 0px;
+            font-size: 15px;
+            width: 40px;
+        }
+        .apply{
+            width: -webkit-fill-available;
+            height: 80%;
+            background-color: #ffeaff;
+            border: 1px;
+            font-size: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+        .apply:hover{
+            box-shadow: 0 0 2px 2px #b690c4;
+        }
+        .check_status{
+            margin-top: 45px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column; 
+        }
+        .appln{
+            width: 90%;
+            height: 60px;
+            background-color: #ffffff;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: row;
+            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .app_name{
+            width: 55%;
+            height: 100%;
+            margin-left: 30px;
+            font-size: 25px ;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            line-height: var(--header_height);
+            overflow: hidden;
+            text-align: start; 
+            letter-spacing: 5px;
+        }
+        .status{
+            width: 20%;
+            height: 100%;  
+            font-size: 25px;
+            font-weight: 700;
+            line-height: var(--header_height);  
+            text-align: center;
+            border-left: 1px rgb(163, 163, 163) solid;
+            border-right: 1px rgb(163, 163, 163) solid;
+        }
+        .date{
+            width: 20%;
+            height: 100%;  
+            font-size: 25px;
+            font-weight: 700;
+            line-height: var(--header_height);  
+            text-align: center;
+        }
+
+        @media (max-width : 1075px) {
+            .nav{
+                display: none;
+            }
+        }
+
+        @media (max-width : 350px) {
+            .nav{
+                display: none;
+            }
+            .container{
+                min-width: fit-content;
+                background-color: transparent;
+                box-shadow: none;
+            }
+            .doc_img{
+                display: none;
+            }
+            .doc_text{
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .doc_box{
+                height: fit-content;
+                background:#f7e9f8 ;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- /*////////////////////////////  header  ////////////////////////////*/ -->
+    <header class="header">
+        <div class="student_Logo">
+            <img class="image" src="../imgs/index/student_Logo.png" alt="">
+        </div>
+        <div class="clg_name">A.P. Shah Institute of Technology</div>
+    </header>
+
+    
+    <!-- /*////////////////////////////  main-body  ////////////////////////////*/ -->
+    <main-body>
+
+        <!-- /*////////////////////////////  navigation  ////////////////////////////*/ -->
+        <div class="nav">
+            <div class="stu-info">
+                <div class="stu-img">
+                    <img class="image" src="../imgs/dashboard/navigation/student_logo.png" alt="" onerror="this.src='../img_bkp/dashboard/navigation/student_logo.png';">
+                </div>
+                <div class="stu-name">StudentX</div>
+            </div>
+
+            <button class="nav_container">
+                <div class="img-container">
+                    <img class="image" src="../imgs/dashboard/navigation/profile.png" alt="" onerror="this.src='../img_bkp/dashboard/navigation/profile.png';">
+                </div>
+                <div class="nav-item">Profile</div>
+            </button>
+
+            <button class="nav_container">
+                <div class="img-container">
+                    <img class="image" src="../imgs/dashboard/navigation/dashboard.png" alt="" onerror="this.src='../img_bkp/dashboard/navigation/dashboard.png';">
+                </div>
+                <div class="nav-item">Dashboard</div>
+            </button>
+
+            <button class="nav_container">
+                <div class="img-container">
+                    <img class="image" src="../imgs/dashboard/navigation/check _tatus.png" alt="" onerror="this.src='../img_bkp/dashboard/navigation/check _tatus.png';">
+                </div>
+                <div class="nav-item">Check Status</div>
+            </button>
+
+            <button class="nav_container">
+                <div class="img-container">
+                    <img class="image" src="../imgs/dashboard/navigation/notification.png" alt="" onerror="this.src='../img_bkp/dashboard/navigation/notification.png';">
+                </div>
+                <div class="nav-item">Notice</div>
+            </button>
+        
+            <button class="nav_container logout">
+                <div class="img-container">
+                    <img class="image" src="../imgs/dashboard/navigation/Logout.png" alt="" onerror="this.src='../img_bkp/dashboard/navigation/Logout.png';">
+                </div>
+                <div class="nav-item">Logout</div>
+            </button>
+        </div>
+
+
+        <!-- /*////////////////////////////  Main body  ////////////////////////////*/ -->
+        <div class="main_body">
+
+            <div class="sub_header">
+                <div class=sub_header_text>Check Status</div>
+                <div class="filter">
+                    <select class="status_filter" name="status_filter" id="status_filter">
+                        <option value="select_filter">Select Filter</option>
+                        <option value="completed">Completed</option>
+                        <option value="in-progress">In-progress</option>
+                        <option value="submitted">Submitted</option>
+                    </select>
+                    <button class="apply">Apply</button>
+                </div>
+            </div>
+
+            <div class="check_status">
+                <div class="appln">
+                    <div class="app_name"> <a href="">Convocation</a></div>
+                    <div class="status">In-progress</div>
+                    <div class="date">01/01/2003</div>
+                </div>
+                <div class="appln">
+                    <div class="app_name"> <a href="">Leaving Certificate</a></div>
+                    <div class="status">In-progress</div>
+                    <div class="date">01/01/2003</div>
+                </div>
+                <div class="appln">
+                    <div class="app_name"> <a href="">Letter of Recommendation</a></div>
+                    <div class="status">In-progress</div>
+                    <div class="date">01/01/2003</div>
+                </div>
+                <div class="appln">
+                    <div class="app_name"> <a href="">Marksheets</a></div>
+                    <div class="status">In-progress</div>
+                    <div class="date">01/01/2003</div>
+                </div>
+            </div>
+        </div>
+    </main-body>
+
+    <script src="../js/menuToggle.js"></script>
+    
+</body>
+</html>

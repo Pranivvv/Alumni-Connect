@@ -1,0 +1,126 @@
+body{
+    background: #ffeaff;
+}
+.container{
+    align-self: center;
+    width: 900px;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.Logo_container{
+    width: 55%;
+    /* height: 100%; */
+    background: #ffffff;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.Login_window{
+    width: 45%;
+    background: #F4ECFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.student_Logo{
+    margin-top: 20px;
+    width: 75px;
+    height: 75px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login_txt{
+    margin-top: 15px;
+    /* margin-bottom: -15px; */
+    color: black;
+    opacity: 0.75;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 45px;
+    word-wrap: break-word
+}
+.txt{
+    color: black;
+    opacity: 0.75;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word
+}
+.input{
+    margin-top: 30px;
+    width: 250px; 
+    height: 40px; 
+    background: white; 
+    border-radius: 20px; 
+    border: 1px rgb(163, 163, 163) solid;
+    text-align: center;
+    font-size: large;
+    font-family: 'Inter', sans-serif;
+}
+#pass{
+    margin-top: 20px;
+}
+.text{
+    color: black;
+    opacity: 0.75;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word
+}
+.checkbox{
+    margin-top: 5px;
+}
+.Login{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 200px; 
+    height: 50px; 
+    background: #e9bbf8; 
+    border: 0px;
+    border-radius: 25px;
+}
+.Login:hover{
+    box-shadow: 0 0 2px 2px #b690c4;
+}
+
+@media (max-width: 900px) {   
+    /* body{
+        background:#ffffff;
+    } */
+    .container{
+        width: 405px;
+        height: 500px;
+    }
+    .content-to-hide {
+        display: none;
+    }
+    .Login_window{
+        width: 405px;
+    }
+}
+
+/* @media (max-width: 300px) {
+    .content-to-hide {
+        display: none;
+    }
+    .Login_window{
+        width: 200px;
+    }
+} */
